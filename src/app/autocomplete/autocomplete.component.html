@@ -8,6 +8,8 @@
         [(ngModel)]="searchValue" (keyup)="search($event)" class="search-input">
       <button class="search-button" (click)="onEnter()"><i class="fas fa-search icon"></i></button>
     </div>
+    <ngx-spinner></ngx-spinner>
+
     <app-employeesList (employeeSpec)="addItem($event)" *ngIf="!isShowResults&&dropDown" [inputValue]="searchValue"
       [employees]="employees">
     </app-employeesList>
