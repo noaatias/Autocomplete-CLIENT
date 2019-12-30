@@ -1,0 +1,9 @@
+<div style="display: flex;width: 100%;padding: 20px;"  (click)="passNewEmployee($event)" >
+  <div><img [src]="employee.imgUrl" width="70" style="padding-left: 10px  "/></div>
+  <div class="employeeDetails">
+    <div style="padding:5px;color:blueviolet;font-weight: bold;" [innerHTML]="shared.highLight(employee.name,inputValue)">
+    </div>
+    <div style="padding:5px" [innerHTML]="shared.highLight(employee.workTitle,inputValue)">
+    </div>
+  </div>
+</div>

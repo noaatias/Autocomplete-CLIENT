@@ -1,0 +1,7 @@
+.employeeDetails {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  align-self: center;
+  margin-left: 10px;
+}

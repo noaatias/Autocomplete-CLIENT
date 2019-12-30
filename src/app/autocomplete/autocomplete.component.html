@@ -1,0 +1,18 @@
+<div class="container">
+  <h1 class="title" *ngIf="!isShowResults">LOOKING FOR AN EMPLOYEE?</h1>
+  <h1 class="title" *ngIf="isShowResults">SEARCH RESULTS</h1>
+  <div class="subtitle">click on the search bar to learn our suggestions</div>
+  <div class="search-input-box">
+    <div class="search" (clickOutside)="onBlur($event)">
+      <input class="input" placeholder="Search..." (keyup.enter)="onEnter()" (focus)="onFocus()" type="text"
+        [(ngModel)]="searchValue" (keyup)="search($event)" class="search-input">
+      <button class="search-button" (click)="onEnter()"><i class="fas fa-search icon"></i></button>
+    </div>
+    <app-employeesList (employeeSpec)="addItem($event)" *ngIf="!isShowResults&&dropDown" [inputValue]="searchValue"
+      [employees]="employees">
+    </app-employeesList>
+  </div>
+  <div class="results" *ngIf="isShowResults">
+    <app-employeesResults [employees]="employees"></app-employeesResults>
+  </div>
+</div>

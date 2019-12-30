@@ -1,0 +1,4 @@
+<div class="list" id="style-1" >
+  <app-employee class="employee" (click)="passEmployee()"  *ngFor="let employee of employees" (newEmployee)="addEmployee($event)" [inputValue]="inputValue" [employee]="employee"></app-employee>  
+</div>
+
